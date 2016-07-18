@@ -1,5 +1,6 @@
 require 'sinatra'
 
+
 get '/' do
   'Hello world!'
 end
@@ -17,5 +18,6 @@ get '/public' do
 end
 
 get '/cats' do
+  @kitty_name = %w(Amigo Oscar Viking).sample
   erb(:index)
 end
