@@ -1,23 +1,16 @@
 require 'sinatra'
 
-
 get '/' do
   'Hello world!'
 end
 
-get '/secret' do
-  'This is a secret'
+get '/random-cat' do
+  @name = %w(Amigo Oscar Viking).sample
+  erb(:index)
 end
 
-get '/supersecret' do
-  'This is super secret.  shhh'
-end
-
-get '/public' do
-  'This is for public knowledge.'
-end
-
-get '/cats' do
-  @kitty_name = %w(Amigo Oscar Viking).sample
+get '/named-cat' do
+  p params
+  @name = params[:name]
   erb(:index)
 end
