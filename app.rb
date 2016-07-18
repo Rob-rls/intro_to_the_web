@@ -17,7 +17,5 @@ get '/public' do
 end
 
 get '/cats' do
-  "<div style='border: 4px dashed pink'>
-  <img src='http://bit.ly/1eze8aE'>
-  </div>"
+  erb(:index)
 end
