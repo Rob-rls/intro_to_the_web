@@ -8,10 +8,15 @@ get '/secret' do
   'Secret'
 end
 
-get '/named-cat' do
+post '/named-cat' do
   p params
   @name = params[:name]
   erb(:index)
+end
+
+get '/cat-form' do
+  p params
+  erb(:form)
 end
 
 get '/random-cat' do
